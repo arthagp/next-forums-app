@@ -21,7 +21,7 @@ import asyncPopulateUsersAndThreads from './action';
 import { receiveThreadsActionCreator } from '../threads/action';
 import { receiveUsersActionCreator } from '../users/action';
 
-const fakeTalksResponse = [
+const fakeThreadResponse = [
   {
     id: 'thread-Np47p4jhUXYhrhRn',
     title: 'Bagaimana pengalamanmu belajar Redux?',
@@ -67,7 +67,7 @@ describe('asyncPopulateUsersAndThreads thunk', () => {
     // arrange
     // stub implementation
     api.getAllUsers = () => Promise.resolve(fakeUsersResponse);
-    api.allThreads = () => Promise.resolve(fakeTalksResponse);
+    api.allThreads = () => Promise.resolve(fakeThreadResponse);
     // mock dispatch
     const dispatch = vi.fn();
 
@@ -76,7 +76,7 @@ describe('asyncPopulateUsersAndThreads thunk', () => {
 
     // assert
     expect(dispatch).toHaveBeenCalledWith(showLoading());
-    expect(dispatch).toHaveBeenCalledWith(receiveThreadsActionCreator(fakeTalksResponse));
+    expect(dispatch).toHaveBeenCalledWith(receiveThreadsActionCreator(fakeThreadResponse));
     expect(dispatch).toHaveBeenCalledWith(receiveUsersActionCreator(fakeUsersResponse));
     expect(dispatch).toHaveBeenCalledWith(hideLoading());
   });

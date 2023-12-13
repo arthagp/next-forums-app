@@ -1,5 +1,11 @@
 {
+  "env": {
+    "cypress/globals": true
+  },
   "extends": "next/core-web-vitals",
+  "plugins": [
+    "cypress"
+  ],
   "rules": {
     "react/no-unescaped-entities" : "off"
   }
