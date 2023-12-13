@@ -26,7 +26,7 @@ const fakeTalksResponse = [
     id: 'thread-Np47p4jhUXYhrhRn',
     title: 'Bagaimana pengalamanmu belajar Redux?',
     body:
-          'Coba ceritakan dong, gimana pengalaman kalian belajar Redux di Dicoding?',
+      'Coba ceritakan dong, gimana pengalaman kalian belajar Redux di Dicoding?',
     category: 'redux',
     createdAt: '2023-05-29T07:55:52.266Z',
     ownerId: 'user-mQhLzINW_w5TxxYf',
@@ -51,7 +51,7 @@ describe('asyncPopulateUsersAndThreads thunk', () => {
   // backup adn restore
   beforeEach(() => {
     api._getAllUsers = api.getAllUsers;
-    api._getAllTalks = api.getAllTalks;
+    api._getAllThreads = api.allThreads;
   });
 
   afterEach(() => {
@@ -85,12 +85,11 @@ describe('asyncPopulateUsersAndThreads thunk', () => {
     // arrange
     // stub implementation
     api.getAllUsers = () => Promise.reject(fakeErrorResponse);
-    api.getAllTalks = () => Promise.reject(fakeErrorResponse);
+    api.allThreads = () => Promise.reject(fakeErrorResponse);
     // mock dispatch
     const dispatch = vi.fn();
     // mock alert
     window.alert = vi.fn();
-
     // action
     await asyncPopulateUsersAndThreads()(dispatch);
 
