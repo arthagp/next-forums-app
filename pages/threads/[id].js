@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
-import ThreadDetailItem from '../../components/threadDetailItem';
+import ThreadDetailItem from '../../components/ThreadDetailItem';
 import { asyncReceiveThreadDetail, asyncCreateComment } from '../../states/threadDetail/action';
 
 function DetailThreadPage() {
