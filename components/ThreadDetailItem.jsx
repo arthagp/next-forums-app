@@ -4,7 +4,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import InputComment from './InputComment';
 import CommentList from './CommentList';
-import ThreadBodyDetail from './threadBodyDetail';
+import ThreadBodyDetail from './ThreadBodyDetail';
 
 function ThreadDetailItem({
   category, title, body, createdAt, upVotesBy, downVotesBy, owner, comments, toComment,
