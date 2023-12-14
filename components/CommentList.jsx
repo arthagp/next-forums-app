@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { AiOutlineLike, AiOutlineDislike } from 'react-icons/ai';
 import PropTypes from 'prop-types';

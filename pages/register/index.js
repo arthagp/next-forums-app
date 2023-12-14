@@ -1,6 +1,6 @@
 import React from 'react';
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import InputRegister from '../../components/InputRegister';
 import { asyncRegisterUser } from '../../states/users/action';

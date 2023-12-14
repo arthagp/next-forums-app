@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import InputLogin from '../../components/InputLogin';
 import { asyncSetAuthUser } from '../../states/authUser/action';
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 
 function LoginPage() {
   const router = useRouter();

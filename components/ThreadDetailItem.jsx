@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Link from 'next/link'
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import InputComment from './InputComment';
 import CommentList from './CommentList';

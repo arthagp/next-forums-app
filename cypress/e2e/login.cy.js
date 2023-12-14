@@ -43,12 +43,10 @@ describe('Login spec', () => {
   });
 
   it('should display homepage when email and password are correct', () => {
-    cy.get('input[placeholder="Email"]').type('testuser@example.com');
-    cy.get('input[placeholder="Password"]').type('test123456');
+    cy.get('input[placeholder="Email"]').type('zunos@mail.com');
+    cy.get('input[placeholder="Password"]').type('zunos123');
     cy.get('button').contains(/^Login$/).click();
     cy.get('nav').contains(/^Thread$/).should('be.visible');
-    cy.get('h2').contains('Kategori Popular').should('be.visible');
+    cy.get('button').contains('logout').should('be.visible');
   });
 });
-
-

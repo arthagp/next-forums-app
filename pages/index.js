@@ -1,4 +1,5 @@
-import Head from 'next/head'
+/* eslint-disable react/jsx-filename-extension */
+import Head from 'next/head';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { IoIosAddCircle } from 'react-icons/io';
@@ -6,7 +7,6 @@ import { useRouter } from 'next/navigation';
 import asyncPopulateUsersAndThreads from '../states/shared/action';
 import ListThread from '../components/ListThread';
 import Category from '../components/Category';
-import { asyncLikeThread, asyncUnLikeThread } from '../states/threads/action';
 
 export default function Home() {
   const {
@@ -18,7 +18,6 @@ export default function Home() {
   const router = useRouter();
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     dispatch(asyncPopulateUsersAndThreads());
   }, [dispatch]);
@@ -27,12 +26,12 @@ export default function Home() {
     router.push('/add');
   };
 
-  const onLike = (id) => {
-    window.alert('comming soon')
+  const onLike = () => {
+    window.alert('comming soon');
   };
 
-  const onUnLike = (id) => {
-    window.alert('comming soon')
+  const onUnLike = () => {
+    window.alert('comming soon');
   };
 
   const threadList = threads.map((thread) => ({
@@ -42,7 +41,7 @@ export default function Home() {
   }));
 
   if (!threadList) {
-    return null
+    return null;
   }
 
   return (
@@ -73,5 +72,5 @@ export default function Home() {
         </button>
       </section>
     </>
-  )
+  );
 }

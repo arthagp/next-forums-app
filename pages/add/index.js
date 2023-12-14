@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/navigation';
 import AddInputThread from '../../components/AddInputThread';
 import { asyncCreateThread } from '../../states/threads/action';
-import { useRouter } from 'next/navigation'
 
 function AddThreadPage() {
   const dispatch = useDispatch();

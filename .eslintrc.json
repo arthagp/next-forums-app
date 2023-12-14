@@ -1,12 +1,31 @@
 {
   "env": {
-    "cypress/globals": true
+    "cypress/globals": true,
+    "browser": true,
+    "es2021": true,
+    "node": true
   },
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "plugin:react/recommended"
+  ],
   "plugins": [
-    "cypress"
+    "cypress",
+    "react",
+    "react-hooks"
   ],
   "rules": {
-    "react/no-unescaped-entities" : "off"
+    "react/no-unescaped-entities" : "off",
+    "max-len": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": "off",
+    "no-use-before-define": "off",
+    "react/no-danger": "off",
+    "react/jsx-props-no-spreading": "off",
+    "linebreak-style" : "off",
+    "import/no-unresolved": "off",
+    "no-alert": "off",
+    "react/jsx-filename-extension": "off"
   }
 }

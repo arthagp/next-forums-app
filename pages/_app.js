@@ -1,13 +1,13 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
 import React, { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import wrapper from '../states/index';
 import Navigation from '../components/Navigation';
-import { useRouter } from 'next/navigation'
 import { asyncPreloadProcess } from '../states/isPreload/action';
 import { asyncUnsetAuthUser } from '../states/authUser/action';
 import Loading from '../components/Loading';
-import { useDispatch, useSelector } from 'react-redux';
-
 
 function MyApp({ Component, pageProps }) {
   const {
@@ -36,9 +36,12 @@ function MyApp({ Component, pageProps }) {
       <Navigation authUser={authUser} logOut={onLogOut} />
       <Component {...pageProps} />
     </>
-  )
+  );
 }
 
+MyApp.propTypes = {
+  Component: PropTypes.func.isRequired,
+  pageProps: PropTypes.objectOf().isRequired,
+};
+
 export default wrapper.withRedux(MyApp);
-
-
